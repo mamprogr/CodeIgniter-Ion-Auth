@@ -1839,7 +1839,7 @@ class Ion_auth_model extends CI_Model
 			
 			$user = $this->user($user_id)->row();
 			
-			$user_info->ip_address = $user->ip_address;
+			$user_info->ip_address = inet_ntop($user->ip_address);
 			$user_info->password = $user->password;
 			$user_info->salt = $user->salt;
 			$user_info->email = $user->email;
