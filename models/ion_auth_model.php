@@ -1777,6 +1777,19 @@ class Ion_auth_model extends CI_Model
 	/** HybridIgniter functions **/
 	
 	/**
+	 * is from provider
+	 * 
+	 * check if user already have authenticated logged in by social login or not 
+	 *
+	 * @return bool
+	 * @author MAMProgr
+	 **/
+	public function is_from_provider()
+	{
+		return (bool) $this->session->userdata('provider') && (bool) $this->session->userdata('provider_uid');
+	}
+	
+	/**
 	 * check provider
 	 * 
 	 * check if user already have authenticated using this provider before
