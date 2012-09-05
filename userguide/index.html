@@ -94,6 +94,7 @@
 				<li><a href="#register_by_provider">register_by_provider()</a></li>
 				<li><a href="#user_by_provider">user_by_provider()</a></li>
 				<li><a href="#check_provider">check_provider()</a></li>
+				<li><a href="#is_from_provider">is_from_provider()</a></li>
 				<li><a href="#id_by_email">id_by_email()</a></li>
 			</ul>
     	</td>
@@ -1277,6 +1278,27 @@ Documentation
 		else
 		{
 			// do register ..
+		}
+	</pre>
+	<br />
+	
+	<a name="is_from_provider"></a>
+	<h2>is_from_provider()</h2>
+	<p>Check if user already have authenticated by social login or not.</p>
+
+	<p><strong>Return</strong></p>
+	<ul>
+		<li>boolean.  TRUE if the user is authenticated by social network FALSE if not.</li>
+	</ul>
+
+	<p><b>Usage</b></p>
+	<pre>
+		if(!$this->ion_auth->is_from_provider()){
+			$user = $this->ion_auth->user()->row();
+		}
+		else
+		{
+			$user = $this->ion_auth->user_by_provider();
 		}
 	</pre>
 	<br />
